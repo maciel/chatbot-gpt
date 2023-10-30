@@ -7,10 +7,10 @@ function App() {
   const [mensagemDigitada, setMensagemDigitada] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const corpoRef = useRef(null);
-  const apiKey = 'xxxxxx-xxxxxx-xxxxxxx';
+  const apiKey = 'xxxxxx-xxxxxx-xxxxxxx'; //Substitua pelo apiKey fornecida
 
 
-  const userId = localStorage.getItem('userId'); // Recupere o ID do usuário do Local Storage
+  const userId = localStorage.getItem('userId'); 
   console.log(userId)
   
 
@@ -18,7 +18,7 @@ function App() {
     if (mensagemDigitada) {
       setIsLoading(true);
 
-      // Adicione "resumida em no máximo 150 tokens" à pergunta do usuário
+      
       const userMessage = `${mensagemDigitada} Em no máximo 150 caracteres`;
       const newUserMessage = { user: mensagemDigitada };
       const updatedMessages = [...mensagens, newUserMessage];
@@ -32,8 +32,8 @@ function App() {
 
         const params = {
           model: 'text-davinci-003',
-          prompt: userMessage, // Use a pergunta com a adição "resumida em no máximo 150 tokens"
-          max_tokens: 150, // Limita a resposta a 150 tokens
+          prompt: userMessage, 
+          max_tokens: 150, 
           temperature: 0.5,
         };
 
@@ -41,7 +41,7 @@ function App() {
 
         let modelResponse = result.data.choices[0].text;
 
-        // Remova a parte adicionada "Em no máximo 150 caracteres" da resposta
+        
         modelResponse = modelResponse.replace('Em no máximo 150 caracteres', '');
 
         setIsLoading(false);
@@ -52,7 +52,7 @@ function App() {
         setMensagens(updatedMessages);
         setMensagemDigitada('');
 
-        // Salve as mensagens no Local Storage associadas ao ID do usuário
+      
         saveMessagesToLocalStorage(userId, updatedMessages);
       } catch (error) {
         console.error(`Error -> ${error}`);
@@ -85,7 +85,7 @@ function App() {
 
   useEffect(() => {
     if (userId) {
-      // Recupere as mensagens associadas ao ID do usuário do Local Storage
+   
       const storedMessages = getMessagesFromLocalStorage(userId);
       if (storedMessages.length > 0) {
         setMensagens(storedMessages);

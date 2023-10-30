@@ -51,16 +51,13 @@ body {
   justify-content: flex-start;
   padding: 10px;
   max-height: 100%;
-  /* Adicione um valor adequado para definir uma altura máxima para o contêiner de mensagens, para que ele role verticalmente quando necessário */
   overflow-y: auto;
-  /* Adicione uma barra de rolagem vertical quando o conteúdo exceder a altura máxima */
   overflow-x: hidden;
-  /* Adicione esta linha */
+
 }
 
 .mensagem {
   word-wrap: break-word;
-  /* Adicione esta linha */
 }
 
 .enviar {
@@ -100,22 +97,17 @@ body {
 ::placeholder {
   color: rgb(223, 221, 221);
 }
-/* Estilo para o balão de mensagem do usuário */
 .user-balloon {
   background-color: #0074e4;
-  /* Cor para mensagens do usuário, por exemplo, azul */
   color: white;
   border-radius: 15px;
   padding: 10px;
   margin: 5px;
   max-width: 60%;
-  /* Defina a largura máxima para evitar que as mensagens se estendam demais */
 }
 
-/* Estilo para o balão de mensagem do bot */
 .bot-balloon {
   background-color: #02a3a3;
-  /* Cor para mensagens do bot, por exemplo, verde-azulado */
   color: white;
   border-radius: 15px;
   padding: 10px;

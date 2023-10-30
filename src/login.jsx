@@ -4,8 +4,6 @@ import './login.css'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import { useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
 
