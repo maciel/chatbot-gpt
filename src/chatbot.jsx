@@ -7,7 +7,7 @@ function App() {
   const [mensagemDigitada, setMensagemDigitada] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const corpoRef = useRef(null);
-  const apiKey = 'xxxxxx-xxxxxx-xxxxxxx'; //Substitua pelo apiKey fornecida
+  const apiKey = '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'; //Substitua pelo apiKey fornecida
 
 
   const userId = localStorage.getItem('userId'); 
@@ -19,7 +19,7 @@ function App() {
       setIsLoading(true);
 
       
-      const userMessage = `${mensagemDigitada} Em no máximo 150 caracteres`;
+      const userMessage = `${mensagemDigitada} De sua resposta em no máximo 150 caracteres`;
       const newUserMessage = { user: mensagemDigitada };
       const updatedMessages = [...mensagens, newUserMessage];
 
@@ -42,7 +42,7 @@ function App() {
         let modelResponse = result.data.choices[0].text;
 
         
-        modelResponse = modelResponse.replace('Em no máximo 150 caracteres', '');
+        modelResponse = modelResponse.replace('De sua resposta em no máximo 150 caracteres', '');
 
         setIsLoading(false);
 
@@ -105,7 +105,7 @@ function App() {
               {message.user && (
                 <div className='user-message'>
                   <div className='user-balloon'>
-                    {message.user.replace(' resumida em no máximo 150 tokens', '')}
+                    {message.user.replace('De sua resposta em no máximo 150 caracteres', '')}
                   </div>
                 </div>
               )}
