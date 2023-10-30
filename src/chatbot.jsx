@@ -7,7 +7,7 @@ function App() {
   const [mensagemDigitada, setMensagemDigitada] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const corpoRef = useRef(null);
-  const apiKey = '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'; //Substitua pelo apiKey fornecida
+  const apiKey = 'xxxxxx-xxxxxx-xxxxxxx'; //Substitua pelo apiKey fornecida
 
 
   const userId = localStorage.getItem('userId'); 
